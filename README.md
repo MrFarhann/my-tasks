@@ -1,2 +1,2 @@
 # my-tasks
-Todo List
+This is a simple TodoList
