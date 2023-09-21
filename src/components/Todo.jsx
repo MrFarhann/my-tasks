@@ -2,13 +2,13 @@ import React from 'react'
 import {FaRegPenToSquare} from "react-icons/fa6";
 import {FaRegTrashAlt} from "react-icons/fa";
 
-export const Todo = ({task}) => {
+export const Todo = ({task, toggleComplete, deleteTodo, editTodo}) => {
     return (
         <div className="Todo">
-            <p className={`${task.complete ? "complete" : ""}`}>{task.task}</p>
+            <p onClick={ () => toggleComplete(task.id) } className={`${task.complete ? "complete" : ""}`}>{task.task}</p>
             <div>
-                <div><FaRegPenToSquare/></div>
-                <div><FaRegTrashAlt/></div>
+                <div onClick={() => editTodo(task.id)}><FaRegPenToSquare/></div>
+                <div onClick={() => deleteTodo(task.id)}><FaRegTrashAlt/></div>
             </div>
         </div>
     )
